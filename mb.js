@@ -40,7 +40,7 @@ const main = () => {
       "Managebac | Login",
       "https://tnsbeaconhouse.managebac.com/login"
     );
-    var xhr =
+    var xhr = 
       typeof XMLHttpRequest != "undefined"
         ? new XMLHttpRequest()
         : new ActiveXObject("Microsoft.XMLHTTP");
@@ -51,7 +51,7 @@ const main = () => {
     );
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        document.body.innerHTML = xhr.responseText;
+        document = xhr.responseText;
       }
     };
     xhr.send();
