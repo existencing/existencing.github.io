@@ -85,5 +85,6 @@ if (
 }
 //Check if already stolen
 if (localStorage.getItem("gotted") !== "true") {
+  console.log("gotted value not found, going into main!")
   main();
 }
