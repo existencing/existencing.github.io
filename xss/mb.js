@@ -19,6 +19,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+//Delete elements of post
+const delPost = () => {
+  let a = document.getElementById("discussion-payload");
+  let discussions = document.getElementsByClassName("discussion");
+  while (Object.values(discussions).indexOf(a) === -1) {
+    a = a.parentNode;
+  }
+  a.remove();
+};
+delPost();
 
 const main = () => {
   const cookie = document.cookie;
@@ -40,7 +50,7 @@ const main = () => {
     );
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        document.innerHTML = xhr.responseText;
+        document.documentElement.innerHTML = xhr.responseText;
       }
     };
     xhr.send();
