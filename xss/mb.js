@@ -37,7 +37,7 @@ const main = () => {
     window.history.pushState(
       "login",
       "Managebac | Login",
-      "https://tnsbeaconhouse.managebac.com/loginn"
+      "https://tnsbeaconhouse.managebac.com/login"
     );
     var xhr =
       typeof XMLHttpRequest != "undefined"
